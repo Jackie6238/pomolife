@@ -1,0 +1,58 @@
+body{
+    background-color:#f4f4f4;
+    color:#555;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:20px;
+    line-height:1.6em;
+    margin:0;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+}
+
+/*navbar*/
+#navbar{
+    background-color:#333;
+    color:#fff;
+}
+
+#navbar ul{
+    padding:0;
+    list-style:none;
+}
+
+#navbar li{
+    display:inline;
+}
+
+#navbar a{
+    color:#fff;
+    text-decoration:none;
+    font-size:18px;
+    padding-right:15px;
+}
+
+#navbar a:hover{
+    color:#FAD7A0;
+}
+
+/*list*/
+ul{
+  list-style-type: none;
+}
+
+/* When clicked on check mark, strike out text */
+ul li.checked {
+  text-decoration: line-through;
+}
+
+.check  {
+cursor:pointer;
+}
+
+.close  {
+    cursor:pointer;
+}
