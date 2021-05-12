@@ -1,0 +1,208 @@
+*{box-sizing: border-box;}
+
+/* REMOVE SPINNERS FROM NUMBER INPUT */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* budget container */
+.budget-container{
+    position: absolute;
+    width: 360px;
+    height: 650px;
+    top: 53%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 10px 20px 20px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+/* balance */
+.balance{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.balance *{
+    display: inline-block;
+}
+
+/* account */
+.account{
+    width: 320px;
+    margin: 20px;
+}
+
+.account *{
+    display: inline-block;
+}
+
+.expenses-total{
+    color: #f0624d;
+}
+
+.expenses{
+    float: right;
+}
+
+/* horizontal breaker */
+hr {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/* dashboard */
+.budget-dashboard{
+    display: block;
+    width: 360px;
+    height: 470px;
+    background-color: #FFF;
+    margin-top: 35px;
+}
+
+/* tabs */
+.toggle{
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.toggle .tab1, .tab2, .tab3{
+    display: inline-block;
+    cursor: pointer;
+    color: #1a0034;
+    opacity: 0.4;
+}
+
+.toggle .tab2, .tab3{
+    margin-left: 10px;
+}
+
+.active{
+    opacity : 1 !important;
+}
+
+.hide{
+    display: none;
+}
+
+/* task, wish and all dashboard div */
+.budget-dashboard #task, #expense, #all{
+    width: 360px;
+    height: 340px;
+    position: relative;
+}
+
+/* lists */
+#task ul, #wish ul, #all ul{
+    position: relative;
+    width: 360px;
+    height: 340px;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    list-style-type: none;
+    overflow-x: auto;
+}
+
+/* list items */
+.list li{
+    margin-left: 20px;
+}
+
+.list li *{
+    display: inline-block;
+    height: 30px;
+    vertical-align: center;
+}
+
+/* list item icons */
+.entry{
+    width:250px;
+    height: auto;
+    margin-bottom: 10px;;
+    word-wrap: break-word;
+    vertical-align: middle;
+}
+
+.checkbox{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.edit, .delete{
+    width:20px;
+    height: 20px;
+    cursor: pointer;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+
+
+.edit{background-image: url('../icon/edit.png');}
+
+.delete{background-image: url('../icon/trash.png');}
+
+/* inputs */
+.input{
+    width: 360px;
+    position: fixed;
+    bottom: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.input *{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#task .input input#task-title-input, #wish .input input#wish-title-input{
+    height: 40px;
+    width : 200px;
+    padding-left: 10px;
+    margin: 5px;
+    margin-left: 10px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+}
+
+#task .input input#task-amount-input, #wish .input input#wish-amount-input{
+    height: 40px;
+    width : 60px;
+    padding-left: 10px;
+    margin: 5px;
+    margin-left: -10px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+}
+
+.add-task, .add-wish{
+    right: 0px;
+}
+
+#task .input .add-task img, #wish .input .add-wish img{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.checked .entry{
+    text-decoration-line: line-through;
+}
