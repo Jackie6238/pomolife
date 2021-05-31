@@ -77,6 +77,18 @@ ENTRY_LIST = JSON.parse(localStorage.getItem("entry_list")) || [];
 updateUI();
 updateAccount();
 
+// get the current time in the form of "yyyy-mm-dd"
+function GetTime() {
+    let now = new Date();
+    let yyyy = now.getFullYear();
+    let mm = now.getMonth();
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+    let dd = now.getDate();
+    return yyyy + '-' + mm + '-' + dd
+}
+
 // when the addIncome is clicked, create a variable called task with its type, title and amount
 // then store it at the end of the ENTRY_LIST array
 addTask.addEventListener("click", () => {
@@ -87,7 +99,8 @@ addTask.addEventListener("click", () => {
         type: "task",
         status: "unchecked",
         title: taskTitle.value,
-        amount: parseFloat(taskAmount.value)
+        amount: parseFloat(taskAmount.value),
+        date: GetTime()
     }
     ENTRY_LIST.push(task);
 
@@ -107,7 +120,8 @@ addWish.addEventListener("click", () => {
         type: "wish",
         status: "unchecked",
         title: wishTitle.value,
-        amount: parseFloat(wishAmount.value)
+        amount: parseFloat(wishAmount.value),
+        date: GetTime()
     }
     ENTRY_LIST.push(wish);
 
@@ -129,6 +143,8 @@ function updateUI() {
     // clear lists
     clearLists([taskList, wishList, allList]);
 
+    createDate();
+
     // load entry items to list 
     ENTRY_LIST.forEach((entry, index) => {
         if (entry.type == "task") {
@@ -139,7 +155,7 @@ function updateUI() {
             // if entry type is wish, load entries to wish list
             showEntry(wishList, index, entry.type, entry.status, entry.title, entry.amount);
         }
-        showallEntry(allList, index, entry.type, entry.status, entry.title, entry.amount);
+        showallEntry(index, entry.type, entry.status, entry.title, entry.amount, entry.date);
     })
     localStorage.setItem("entry_list", JSON.stringify(ENTRY_LIST));
 }
@@ -152,7 +168,6 @@ function clearLists(lists) {
 
 // get entries from ENTRY_LIST and then insert them one by one to the list 
 function showEntry(list, id, type, status, title, amount) {
-
     if (status == "unchecked") {
         // create a HTML element for each entry
         let entry =
@@ -169,7 +184,74 @@ function showEntry(list, id, type, status, title, amount) {
     }
 }
 
-function showallEntry(list, id, type, status, title, amount) {
+// create a div element for displaying each date when the correponding tasks were created
+function createDate() {
+    const monthName = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"];
+    // get the date of each entry from ENTRY_LIST and store it in an array called "dates"
+    let dates = [];
+    ENTRY_LIST.forEach(entry => {
+        dates.push(entry.date);
+    })
+
+    // use a "new set" to store ONCE all elements of the dates array to a temporary non repetitive date array
+    const datesNonRepetitive = new Set(dates);
+
+    datesNonRepetitive.forEach(date => {
+        // create a div element to display the date when the correponding tasks were created
+        const divDate = document.createElement("div");
+        const mm = document.createElement("span"); // a span to display current month
+        const dd = document.createElement("span");  // a span to display current day
+        const coma = document.createTextNode(", ");
+        const Whitespace = document.createTextNode(" ");
+        const yyyy = document.createElement("span");    // a span to display current year
+
+        divDate.className = "date";
+        divDate.id = date;
+
+        // for any given entry, its created date is stored in the format of yyyy-mm-dd inside the ENTRY_LIST
+        // yyyy is a substing with an index of 0-4, mm 5-7 and dd 8-10
+        yyyy.innerHTML = date.substring(0, 4);
+        let i;
+        if (date.substring(5, 7).startsWith('0')) {
+            i = date.substring(6, 7); // if dd starts with 0, which means 01, 02, 03... then only get the second number, 1, 2, 3...
+        }
+        else {
+            i = date.substring(5, 7); // for month like 10, 11, 12
+        }
+        mm.innerHTML = monthName[i];
+        dd.innerHTML = date.substring(8, 10);
+
+        // append created date span to divDate
+        divDate.appendChild(mm);
+        divDate.appendChild(Whitespace);
+        divDate.appendChild(dd);
+        divDate.appendChild(coma);
+        divDate.appendChild(yyyy);
+
+        // insert the created divDate to allList
+        const position = "afterbegin";
+        allList.insertAdjacentElement(position, divDate);
+    })
+}
+
+
+function showallEntry(id, type, status, title, amount, date) {
+    // find the corresponding div where we should insert the entry
+    const div = document.getElementById(date);
+    const position = "afterend";
+
     if (status == "unchecked") {
         // create a HTML element for each entry
         let entry =
@@ -180,8 +262,7 @@ function showallEntry(list, id, type, status, title, amount) {
             </li>`
 
         // insert the created element to html list 
-        const position = "afterbegin";
-        list.insertAdjacentHTML(position, entry);
+        div.insertAdjacentHTML(position, entry);
     }
 
     if (status == "checked") {
@@ -194,8 +275,7 @@ function showallEntry(list, id, type, status, title, amount) {
             </li>`
 
         // insert the created element to html list 
-        const position = "afterbegin";
-        list.insertAdjacentHTML(position, entry);
+        div.insertAdjacentHTML(position, entry);
     }
 }
 
@@ -232,8 +312,8 @@ function btnHandler(event) {
     }
 }
 
-// when the unchecked is clicked, add the correponding amount to the income, update UI, update account
 
+// when the edit button is clicked, put the title and name back to its input field and delete the entry
 function editEntry(entry) {
     let ENTRY = ENTRY_LIST[entry.id];
 
@@ -256,6 +336,7 @@ function editEntry(entry) {
     deleteEntry(entry);
 }
 
+// delete the entry from ENTRY_LIST (entry id = index)
 function deleteEntry(entry) {
     ENTRY_LIST.splice(entry.id, 1);
 }

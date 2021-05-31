@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.headline{
+    font-size: 3.5rem;
+    padding-top: 55px;
+}
+
+header img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -1;
+}
+
+p{
+    height: 90px;
+    font-size: 62px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: .9;
+}
+
+#progress {
+  width: 100%;
+  background-color:white;
+}
+
+#bar {
+  width: 10%;
+  height: 30px;
+  background-color:rgb(51, 50, 50);
+  text-align: center; /* To center it horizontally */
+  line-height: 30px; /* To center it vertically */
+  color: azure;
+}
+
+.btn{
+    display: inline-block;
+    background-color: #BFC9CA;
+    margin: 10px;
+    padding: 8px 10px;
+    font-size: 1em;
+    cursor:pointer;
+    border: none;
+    border-radius:20px;
+    opacity: .6;
+    
+}
+
+.btn:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+#startbtn, #resetbtn, #stopbtn{
+    height:40px;
+    width:90px;
+
+}
+
+.timer-mode{
+    display: block;
+    font-size: 3.5vw;
+}
+
+#buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+#work-length-break *, #work-length-work *{
+    display: inline-block;
+    font-size: 5vw;
+    
+}
+
+#work-length-work, #work-length-break{
+    white-space: nowrap;
+}
+
+.button{
+    font-size: 2.0em;
+    border:none;
+    background-color: transparent;
+    padding: 0 10px;
+    opacity: .6;
+    transition: opacity .5s;
+}
+
+.button:hover {
+    opacity: .9;
+    cursor: pointer;
+}
+
+.number{
+    font-size: 2.5em;
+}
+
+#time-left {
+    font-size: 12vw;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.active{background-color: #F1948A;}
+
+#timer-container{
+    margin-top: 50px;
+}
+
+.progress{
+    margin: 20px;
+}
