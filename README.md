@@ -12,8 +12,8 @@ Once on the "Timer" page, the default setting is in work mode and you have a 25 
 When you want, you can switch to rest mode whenever you want. You have a timer that works on the same principle. You can adjust it between 1 and 30 minutes using the setting at the bottom left of the page.
 
 
-
 Task
+
 This page also gives you the opportunity to list your to-do list and your desires while adding value to them.
 
 Once on the task page, you can add your to-dos and their value at the bottom of the page. You have the option to edit a task or delete it by clicking on the pencil or trash can buttons. Once the task is complete, you can check on the task done. It disappears from this section and the value is added to the scale.
