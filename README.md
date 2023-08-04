@@ -1,22 +1,26 @@
-This is a homework what we have done throughout a whole year. It is written in a combination of HTML, CSS and JavaScript. The website combines the functionalities of a to-do list, a budget app, and a Pomodoro timer. You can get directly a preview of our website at https://jackie6238.github.io/https-Jackie6238.github.io/.
+# Homework Project - ToDo List, Budget App, and Pomodoro Timer Website
 
-This is a short descriptive video about the whole experience and a brief demonstration of our website. 
-https://youtu.be/XuGH9Y7-Zg0
+This comprehensive homework project was developed in 2021 by Yiyun, Haozhang, and Jackie in Grade 11, using HTML, CSS, and JavaScript. The website combines the functionalities of a to-do list, a budget app, and a Pomodoro timer.
 
-Timer
+## Timer
 
-Do you want to concentrate on your work? The best way is to organize your time better and to alternate between work and rest. Try this section and you will do better!
+Want to improve your work concentration? Organize your time effectively with the Timer section, which allows you to alternate between work and rest.
 
-Once on the "Timer" page, the default setting is in work mode and you have a 25 minute timer in front of you. You can adjust it between 1 and 60 minutes at the bottom right of the page according to your convenience. Once adjusted, you start the timer by clicking "start". You can also take a temporary break and restart your timer using the other two buttons at the bottom of the timer.
+- By default, the timer is set to 25 minutes in work mode.
+- You can adjust the timer between 1 and 60 minutes at the bottom right of the page.
+- Start the timer by clicking "start."
+- Take a temporary break and restart your timer using the buttons at the bottom of the timer.
 
-When you want, you can switch to rest mode whenever you want. You have a timer that works on the same principle. You can adjust it between 1 and 30 minutes using the setting at the bottom left of the page.
+You can also switch to rest mode whenever you want, with a timer working on the same principle. Adjust it between 1 and 30 minutes using the setting at the bottom left of the page.
 
+## Task
 
-Task
+The Task page lets you list your to-do tasks and desires while assigning values to them.
 
-This page also gives you the opportunity to list your to-do list and your desires while adding value to them.
+- Add your to-do tasks and their values at the bottom of the page.
+- Edit or delete a task using the pencil or trash can buttons.
+- Mark tasks as complete, and the value will be added to the scale.
 
-Once on the task page, you can add your to-dos and their value at the bottom of the page. You have the option to edit a task or delete it by clicking on the pencil or trash can buttons. Once the task is complete, you can check on the task done. It disappears from this section and the value is added to the scale.
+In the "Wishes" section, follow a similar process, where checking a wish subtracts its value from the scale.
 
-The "wishes" section is used to add your wishes and their value. It works on the same principle as the list of your tasks, except that when you check your wish, it is the subtraction of the value which is made at the scale.
-Vous pouvez aussi faire un aperçu de l’ensemble vos tâches et de vos désirs en cliquant « all ». Cette section vous montre tous les éléments que vous avez ajoutés, et la liste contient aussi les tâches et les désirs que vous avez terminés qui sont barrés. Vous pouvez modifier ou supprimer tous les éléments dans cette section. 
+You can also get an overview of all your tasks and desires by clicking "all." This section displays all items, including completed tasks and wishes, which are crossed out. You have the option to modify or delete items in this section.
