@@ -1,6 +1,6 @@
 # Homework Project - ToDo List, Budget App, and Pomodoro Timer Website
 
-This comprehensive homework project was developed in 2021 by Yiyun, Haozhang, and Jackie in Grade 11, using HTML, CSS, and JavaScript. The website combines the functionalities of a to-do list, a budget app, and a Pomodoro timer.
+This comprehensive homework project was developed in 2021 by Yiyun, Haozhang, and Jackie in Grade 11, using HTML, CSS, and JavaScript. The website combines the functionalities of a to-do list, a budget app, and a Pomodoro timer. The website is available here for demo purposes: https://jackie6238.github.io/pomolife/ 
 
 ## Timer
 
